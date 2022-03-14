@@ -18,16 +18,27 @@ int main()
     std::cout << std::endl;
 
     // declarde 3 number code
-    const int a = 4;
-    const int b = 3;
-    const int c = 2;
+    const int CodeA = 4;
+    const int CodeB = 3;
+    const int CodeC = 2;
 
-    const int sum = a + b + c;
-    const int product = a * b * c;
+    const int CodeSum = CodeA + CodeB + CodeC;
+    const int CodeProduct = CodeA * CodeB * CodeC;
 
-    // Print sum and product to the terminal
-    std::cout << "Summe: " << sum << std::endl;
-    std::cout << "Produkt: " <<  product << std::endl;
+    // Print CodeSum and CodeProduct to the terminal
+    std::cout << "+ Es gibt drei Nummern im Code!" << std::endl;
+    std::cout << "+ Der Code hat die Summe: " << CodeSum << std::endl;
+    std::cout << "+ Das Produkt des Codes ist: " <<  CodeProduct << std::endl;
+
+    // Declaring the variables for the guesses of the code and asking fo the input
+    int GuessA, GuessB, GuessC;
+    std::cout << std::endl;
+    std::cin >> GuessA;
+    std::cin >> GuessB;
+    std::cin >> GuessC;
+
+    int GuessSum = GuessA + GuessB + GuessC;
+    int GuessProduct = GuessA * GuessB * GuessC;
 
     return 0;
 }
