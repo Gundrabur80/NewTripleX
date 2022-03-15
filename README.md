@@ -1,4 +1,5 @@
 # NewTripleX
 A terminal based game in German to guess the correct numbers
 
-Actually it just displays the welcome message and aks for the player's input.
+The game is working so far.
+Want to include that the player has 3 guesses available in any level.
