@@ -13,7 +13,7 @@ void PrintIntroduction(int Difficulty)
     std::cout << "I------------------------------------------------------------------------------I\n\n";
 }
 
-bool PlayGame(int Difficulty)
+bool PlayGame(int Difficulty, int Tries)
 {
     PrintIntroduction(Difficulty);
 
@@ -29,6 +29,7 @@ bool PlayGame(int Difficulty)
     std::cout << "+ Es gibt drei Nummern im Code!\n";
     std::cout << "+ Der Code hat die Summe: " << CodeSum;
     std::cout << "\n+ Das Produkt des Codes ist: " <<  CodeProduct << std::endl;
+    std::cout << "Du hast noch " << Tries << " Versuche.";
 
     // Declaring the variables for the guesses of the code and asking fo the input
     int GuessA, GuessB, GuessC;
@@ -46,7 +47,7 @@ bool PlayGame(int Difficulty)
     }
     else
     {
-        std::cout << "\nDein Code war leider falsch. Vorsicht Agent! Versuch es noch mal!\n";
+        std::cout << "\nDein Code war leider falsch. Vorsicht Agent!\n";
         return false;
     }
 }
@@ -57,22 +58,35 @@ int main()
 
     int LevelDifficulty = 1;
     const int MaxDifficulty = 5;
+    int Tries = 3;
     
 
-    while (LevelDifficulty <= MaxDifficulty) // Loop the game until all levels are completed
+    while (LevelDifficulty <= MaxDifficulty && Tries > 0) // Loop the game until all levels are completed
     {
-        bool bLevelComplete = PlayGame(LevelDifficulty);
+        bool bLevelComplete = PlayGame(LevelDifficulty, Tries);
         std::cin.clear(); // Clears any errors
         std::cin.ignore(); // Discards the buffer
 
         if (bLevelComplete)
         {
             ++LevelDifficulty;
+            Tries = 3;
+        }
+        else
+        {
+            --Tries;
         }
         
     }
     
-    std::cout << "Gratuliere! Du hast es geschafft! Alle Dateien sind geladen! Jetzt verschwinde sofort!";
-
+    if (Tries == 0)
+    {
+        std::cout << "\nDu wurdest geschnappt und hast versagt! Das Spiel wird beendet! Starte erneut um es noch mal zu versuchen!";
+    }
+    else
+    {
+        std::cout << "\nGratuliere! Du hast es geschafft! Alle Dateien sind geladen! Jetzt verschwinde sofort!";
+    }
+    
     return 0;
 }
