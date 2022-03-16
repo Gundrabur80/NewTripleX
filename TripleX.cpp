@@ -29,7 +29,7 @@ bool PlayGame(int Difficulty, int Tries)
     std::cout << "+ Es gibt drei Nummern im Code!\n";
     std::cout << "+ Der Code hat die Summe: " << CodeSum;
     std::cout << "\n+ Das Produkt des Codes ist: " <<  CodeProduct << std::endl;
-    std::cout << "Du hast noch " << Tries << " Versuche.";
+    std::cout << "+ Du hast noch " << Tries << " Versuche.";
 
     // Declaring the variables for the guesses of the code and asking fo the input
     int GuessA, GuessB, GuessC;
